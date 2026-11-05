@@ -19,8 +19,8 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 # User info for title bar and status bar
-HANDLE = os.environ.get("GH_PROFILE_USER", "ashkan")
-FULL_NAME = os.environ.get("GH_FULL_NAME", "Ashkan")
+HANDLE = os.environ.get("GH_PROFILE_USER", "ashkanwick")
+FULL_NAME = os.environ.get("GH_FULL_NAME", "Ashkanwick")
 
 # defaults to the prepped grayscale image (see prep_photo.py), which already has
 # the background removed + local contrast applied.

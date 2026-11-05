@@ -7,7 +7,7 @@
 </tr>
 </table>
 
-## Ashkan
+## ashkanwick
 
 **AI / ML Engineer & Software Developer**  
 *NLP (ParsBERT) · Reinforcement Learning · Serverless & Edge Systems*
