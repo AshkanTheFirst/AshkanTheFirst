@@ -7,12 +7,12 @@
 </tr>
 </table>
 
-## ashkanwick
+## AshkanTheFirst
 
 **AI / ML Engineer & Software Developer**  
 *NLP (ParsBERT) · Reinforcement Learning · Serverless & Edge Systems*
 
-[![GitHub](https://img.shields.io/badge/GitHub-ashkanwick-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ashkanwick)
+[![GitHub](https://img.shields.io/badge/GitHub-AshkanTheFirst-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AshkanTheFirst)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org)
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co)

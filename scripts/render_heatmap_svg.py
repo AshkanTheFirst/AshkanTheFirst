@@ -124,7 +124,7 @@ def render(data):
     ]
     for i, dotcol in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
         parts.append(f'<circle cx="{PAD + i*16}" cy="{TITLEBAR_H/2}" r="5" fill="{dotcol}"/>')
-    username = data.get("username", os.environ.get("GH_PROFILE_USER", "ashkanwick"))
+    username = data.get("username", os.environ.get("GH_PROFILE_USER", "AshkanTheFirst"))
     parts.append(f'<text x="{canvas_w/2}" y="{TITLEBAR_H/2 + 4}" fill="{MUTED}" font-size="12" '
                  f'text-anchor="middle">{username}@github: ~/contributions --graph</text>')
 

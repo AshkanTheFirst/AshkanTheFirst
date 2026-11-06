@@ -43,13 +43,13 @@ ACCENT = "#22d3ee"
 #    ("bul", text)          -> green dot + light bullet
 #    ("gap",)               -> a little vertical space
 # ===========================================================================
-HOST = "ashkanwick"   # shown as  ashkanwick@github  in the header
+HOST = "AshkanTheFirst"   # shown as  AshkanTheFirst@github  in the header
 
 ROWS = [
     ("host",),
     ("kv", "Role", "AI / ML Engineer & Software Developer"),
     ("kv", "Focus", "NLP, Reinforcement Learning & Edge Systems"),
-    ("kv", "GitHub", "github.com/ashkanwick"),
+    ("kv", "GitHub", "github.com/AshkanTheFirst"),
     ("gap",),
     ("sec", "Stack"),
     ("kv", "AI & ML", "PyTorch, ParsBERT, HuggingFace, Q-Learning"),
