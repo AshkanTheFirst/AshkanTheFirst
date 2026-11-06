@@ -25,6 +25,34 @@ OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "contributions.
 import subprocess
 
 
+def fetch_repo_commits():
+    curl_cmd = "curl" if sys.platform != "win32" else "curl.exe"
+    repos_url = f"https://api.github.com/users/{USERNAME}/repos?per_page=100"
+    commits_by_date = {}
+    try:
+        res = subprocess.run([curl_cmd, "-s", "-L", repos_url], capture_output=True)
+        repos = json.loads(res.stdout.decode("utf-8", errors="ignore"))
+        if isinstance(repos, list):
+            for repo in repos:
+                repo_name = repo.get("name")
+                if not repo_name:
+                    continue
+                c_url = f"https://api.github.com/repos/{USERNAME}/{repo_name}/commits?per_page=100"
+                c_res = subprocess.run([curl_cmd, "-s", "-L", c_url], capture_output=True)
+                commits = json.loads(c_res.stdout.decode("utf-8", errors="ignore"))
+                if isinstance(commits, list):
+                    for c in commits:
+                        author_login = (c.get("author") or {}).get("login", "")
+                        author_email = (c.get("commit", {}).get("author", {})).get("email", "")
+                        if USERNAME.lower() in author_login.lower() or "ashkan" in author_login.lower() or "ashkan" in author_email.lower():
+                            d_str = c.get("commit", {}).get("author", {}).get("date", "")[:10]
+                            if d_str:
+                                commits_by_date[d_str] = commits_by_date.get(d_str, 0) + 1
+    except Exception as e:
+        print(f"Error fetching repo commits: {e}", file=sys.stderr)
+    return commits_by_date
+
+
 def fetch_days():
     html_text = ""
     try:
@@ -40,24 +68,36 @@ def fetch_days():
     soup = BeautifulSoup(html_text, "html.parser")
 
     cells = soup.select("td.ContributionCalendar-day")
-    if not cells:
-        print("no calendar cells found -- github markup may have changed", file=sys.stderr)
-        sys.exit(1)
-
     days = []
-    for td in cells:
-        date = td.get("data-date")
-        if not date:
-            continue
-        td_id = td.get("id")
-        tooltip_el = soup.find("tool-tip", attrs={"for": td_id}) if td_id else None
-        text = tooltip_el.get_text(strip=True) if tooltip_el else ""
-        if re.search(r"no contributions", text, re.I):
-            count = 0
-        else:
-            m = re.match(r"(\d+)", text)
-            count = int(m.group(1)) if m else 0
-        days.append({"date": date, "count": count})
+    if cells:
+        for td in cells:
+            date = td.get("data-date")
+            if not date:
+                continue
+            td_id = td.get("id")
+            tooltip_el = soup.find("tool-tip", attrs={"for": td_id}) if td_id else None
+            text = tooltip_el.get_text(strip=True) if tooltip_el else ""
+            if re.search(r"no contributions", text, re.I):
+                count = 0
+            else:
+                m = re.match(r"(\d+)", text)
+                count = int(m.group(1)) if m else 0
+            days.append({"date": date, "count": count})
+
+    # If calendar cells were missing or empty, generate 53 weeks leading to today
+    if not days:
+        today = datetime.date.today()
+        start = today - datetime.timedelta(days=364)
+        cur = start
+        while cur <= today:
+            days.append({"date": cur.isoformat(), "count": 0})
+            cur += datetime.timedelta(days=1)
+
+    # Merge with exact commits scanned from user's public repos
+    repo_commits = fetch_repo_commits()
+    for d in days:
+        r_cnt = repo_commits.get(d["date"], 0)
+        d["count"] = max(d["count"], r_cnt)
 
     days.sort(key=lambda d: d["date"])
     return days

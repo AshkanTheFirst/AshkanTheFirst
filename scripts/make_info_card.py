@@ -14,7 +14,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "info-card.svg")
 STATIC = bool(os.environ.get("STATIC"))
 
-W, H = 480, 376
+W, H = 480, 416
 PAD = 20
 TITLEBAR_H = 30
 KEY_X = PAD
@@ -48,19 +48,21 @@ HOST = "AshkanTheFirst"   # shown as  AshkanTheFirst@github  in the header
 ROWS = [
     ("host",),
     ("kv", "Role", "AI / ML Engineer & Software Developer"),
-    ("kv", "Focus", "NLP, Reinforcement Learning & Edge Systems"),
+    ("kv", "Focus", "NLP, Computer Vision, RL & Edge Systems"),
     ("kv", "GitHub", "github.com/AshkanTheFirst"),
     ("gap",),
     ("sec", "Stack"),
-    ("kv", "AI & ML", "PyTorch, ParsBERT, HuggingFace, Q-Learning"),
+    ("kv", "AI & ML", "PyTorch, ParsBERT, Vision/OCR, Q-Learning"),
     ("kv", "Languages", "Python, JavaScript, TypeScript, SQL, Bash"),
     ("kv", "Web & App", "Streamlit, Telebot API, RESTful APIs"),
-    ("kv", "Cloud/Edge", "Cloudflare Workers & D1, Linux, Git"),
+    ("kv", "Cloud/Edge", "Cloudflare Workers & D1, Win32, Linux"),
     ("gap",),
-    ("sec", "Highlights"),
-    ("bul", "ParsBERT Sentiment Analysis for Persian E-Commerce"),
-    ("bul", "RL Academy: Interactive Q-Learning Seminar Bot"),
-    ("bul", "Serverless Telegram File Store on Cloudflare D1"),
+    ("sec", "Projects"),
+    ("bul", "Persian-OCR: Deep Learning Character Recognition"),
+    ("bul", "BAFP: Persian Sentiment Analysis with ParsBERT"),
+    ("bul", "stark-rl-academy: Interactive Q-Learning Seminar Bot"),
+    ("bul", "uploaderashkanbot: Serverless Telegram File Store"),
+    ("bul", "regdust: Lightweight Windows Registry Utility"),
 ]
 
 

@@ -10,7 +10,7 @@
 ## AshkanTheFirst
 
 **AI / ML Engineer & Software Developer**  
-*NLP (ParsBERT) · Reinforcement Learning · Serverless & Edge Systems*
+*NLP (ParsBERT) · Computer Vision & OCR · Reinforcement Learning · Edge Systems*
 
 [![GitHub](https://img.shields.io/badge/GitHub-AshkanTheFirst-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AshkanTheFirst)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
