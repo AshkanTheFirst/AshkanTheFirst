@@ -14,7 +14,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "info-card.svg")
 STATIC = bool(os.environ.get("STATIC"))
 
-W, H = 480, 416
+W, H = 480, 440
 PAD = 20
 TITLEBAR_H = 30
 KEY_X = PAD
@@ -48,21 +48,22 @@ HOST = "AshkanTheFirst"   # shown as  AshkanTheFirst@github  in the header
 ROWS = [
     ("host",),
     ("kv", "Role", "AI / ML Engineer & Software Developer"),
-    ("kv", "Focus", "NLP, Computer Vision, RL & Edge Systems"),
+    ("kv", "Focus", "NLP, Computer Vision, RL & Systems Tools"),
     ("kv", "GitHub", "github.com/AshkanTheFirst"),
     ("gap",),
     ("sec", "Stack"),
     ("kv", "AI & ML", "PyTorch, ParsBERT, Vision/OCR, Q-Learning"),
-    ("kv", "Languages", "Python, JavaScript, TypeScript, SQL, Bash"),
+    ("kv", "Languages", "Python, C#, JavaScript, TypeScript, SQL"),
     ("kv", "Web & App", "Streamlit, Telebot API, RESTful APIs"),
-    ("kv", "Cloud/Edge", "Cloudflare Workers & D1, Win32, Linux"),
+    ("kv", "Systems", "Windows 10/11, Cloudflare D1, Linux"),
     ("gap",),
     ("sec", "Projects"),
+    ("bul", "Phoenix-Optimizer: Windows 10/11 Safe Optimizer"),
     ("bul", "Persian-OCR: Deep Learning Character Recognition"),
-    ("bul", "BAFP: Persian Sentiment Analysis with ParsBERT"),
-    ("bul", "stark-rl-academy: Interactive Q-Learning Seminar Bot"),
-    ("bul", "uploaderashkanbot: Serverless Telegram File Store"),
-    ("bul", "regdust: Lightweight Windows Registry Utility"),
+    ("bul", "BAFP: Sentiment Analysis with ParsBERT"),
+    ("bul", "arman-vpn-client: Open-Source Multi-platform VPN"),
+    ("bul", "windscribe-killer: Fast Windows Cleaner in C#"),
+    ("bul", "stark-rl-academy: Interactive Q-Learning Seminar"),
 ]
 
 

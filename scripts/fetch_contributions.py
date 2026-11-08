@@ -25,31 +25,53 @@ OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "contributions.
 import subprocess
 
 
+def get_auth_token():
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        return token
+    try:
+        res = subprocess.run(["cmd.exe", "/c", "echo protocol=https&echo host=github.com&echo."], capture_output=True, text=True)
+        p = subprocess.run(["git", "credential", "fill"], input=res.stdout, capture_output=True, text=True)
+        for line in p.stdout.splitlines():
+            if line.startswith("password="):
+                return line.split("=", 1)[1]
+    except Exception:
+        pass
+    return None
+
+
 def fetch_repo_commits():
     curl_cmd = "curl" if sys.platform != "win32" else "curl.exe"
     repos_url = f"https://api.github.com/users/{USERNAME}/repos?per_page=100"
     commits_by_date = {}
+    token = get_auth_token()
+    auth_headers = ["-H", f"Authorization: Bearer {token}"] if token else []
+    base_headers = ["-H", "User-Agent: profile-readme-bot/1.0", "-H", "Accept: application/vnd.github+json"] + auth_headers
+
     try:
-        res = subprocess.run([curl_cmd, "-s", "-L", repos_url], capture_output=True)
+        res = subprocess.run([curl_cmd, "-s", "-L"] + base_headers + [repos_url], capture_output=True)
         repos = json.loads(res.stdout.decode("utf-8", errors="ignore"))
         if isinstance(repos, list):
             for repo in repos:
                 repo_name = repo.get("name")
                 if not repo_name:
                     continue
-                c_url = f"https://api.github.com/repos/{USERNAME}/{repo_name}/commits?per_page=100"
-                c_res = subprocess.run([curl_cmd, "-s", "-L", c_url], capture_output=True)
-                commits = json.loads(c_res.stdout.decode("utf-8", errors="ignore"))
-                if isinstance(commits, list):
-                    for c in commits:
-                        author_login = (c.get("author") or {}).get("login", "")
-                        author_email = (c.get("commit", {}).get("author", {})).get("email", "")
-                        if USERNAME.lower() in author_login.lower() or "ashkan" in author_login.lower() or "ashkan" in author_email.lower():
-                            d_str = c.get("commit", {}).get("author", {}).get("date", "")[:10]
-                            if d_str:
-                                commits_by_date[d_str] = commits_by_date.get(d_str, 0) + 1
+                try:
+                    c_url = f"https://api.github.com/repos/{USERNAME}/{repo_name}/commits?per_page=100"
+                    c_res = subprocess.run([curl_cmd, "-s", "-L"] + base_headers + [c_url], capture_output=True)
+                    commits = json.loads(c_res.stdout.decode("utf-8", errors="ignore"))
+                    if isinstance(commits, list):
+                        for c in commits:
+                            author_login = (c.get("author") or {}).get("login", "")
+                            author_email = (c.get("commit", {}).get("author", {})).get("email", "")
+                            if USERNAME.lower() in author_login.lower() or "ashkan" in author_login.lower() or "ashkan" in author_email.lower():
+                                d_str = c.get("commit", {}).get("author", {}).get("date", "")[:10]
+                                if d_str:
+                                    commits_by_date[d_str] = commits_by_date.get(d_str, 0) + 1
+                except Exception as err:
+                    print(f"Skipping {repo_name} commits due to: {err}", file=sys.stderr)
     except Exception as e:
-        print(f"Error fetching repo commits: {e}", file=sys.stderr)
+        print(f"Error fetching repo list: {e}", file=sys.stderr)
     return commits_by_date
 
 

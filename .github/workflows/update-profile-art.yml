@@ -24,6 +24,7 @@ jobs:
       - name: Fetch contributions
         env:
           GH_PROFILE_USER: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/fetch_contributions.py
 
       - name: Render heatmap
