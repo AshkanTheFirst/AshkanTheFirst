@@ -2,8 +2,8 @@
 
 <table>
 <tr>
-<td valign="top"><img src="./ascii.svg" width="415" alt="ASCII portrait" /></td>
-<td valign="top"><img src="./info-card.svg" width="485" alt="Experience, stack, highlights" /></td>
+<td valign="top"><img src="./ascii.svg" width="435" alt="ASCII portrait" /></td>
+<td valign="top"><img src="./info-card.svg" width="475" alt="Experience, stack, highlights" /></td>
 </tr>
 </table>
 
@@ -14,6 +14,7 @@
 
 [![GitHub](https://img.shields.io/badge/GitHub-AshkanTheFirst-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AshkanTheFirst)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/)
 [![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)](https://dotnet.microsoft.com/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org)
 [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co)

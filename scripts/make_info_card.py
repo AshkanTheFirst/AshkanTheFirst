@@ -14,7 +14,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "info-card.svg")
 STATIC = bool(os.environ.get("STATIC"))
 
-W, H = 480, 440
+W, H = 480, 460
 PAD = 20
 TITLEBAR_H = 30
 KEY_X = PAD
@@ -53,15 +53,16 @@ ROWS = [
     ("gap",),
     ("sec", "Stack"),
     ("kv", "AI & ML", "PyTorch, ParsBERT, Vision/OCR, Q-Learning"),
-    ("kv", "Languages", "Python, C#, JavaScript, TypeScript, SQL"),
+    ("kv", "Languages", "Python, Go, C#, JavaScript, TypeScript, SQL"),
     ("kv", "Web & App", "Streamlit, Telebot API, RESTful APIs"),
     ("kv", "Systems", "Windows 10/11, Cloudflare D1, Linux"),
     ("gap",),
     ("sec", "Projects"),
+    ("bul", "fake-mail-ai: Disposable Email & OTP Extractor"),
     ("bul", "Phoenix-Optimizer: Windows 10/11 Safe Optimizer"),
     ("bul", "Persian-OCR: Deep Learning Character Recognition"),
     ("bul", "BAFP: Sentiment Analysis with ParsBERT"),
-    ("bul", "arman-vpn-client: Open-Source Multi-platform VPN"),
+    ("bul", "arman-vpn-client: Open-Source VPN Client in Go"),
     ("bul", "windscribe-killer: Fast Windows Cleaner in C#"),
     ("bul", "stark-rl-academy: Interactive Q-Learning Seminar"),
 ]
