@@ -2,18 +2,19 @@
 
 <table>
 <tr>
-<td valign="top"><img src="./ascii.svg" width="435" alt="ASCII portrait" /></td>
-<td valign="top"><img src="./info-card.svg" width="475" alt="Experience, stack, highlights" /></td>
+<td valign="top"><img src="./ascii.svg" width="445" alt="ASCII portrait" /></td>
+<td valign="top"><img src="./info-card.svg" width="465" alt="Experience, stack, highlights" /></td>
 </tr>
 </table>
 
 ## AshkanTheFirst
 
 **AI / ML Engineer & Software Developer**  
-*NLP (ParsBERT) · Computer Vision & OCR · Reinforcement Learning · Systems & Tools*
+*NLP (ParsBERT) · Computer Vision & OCR · Reinforcement Learning · Android & Systems*
 
 [![GitHub](https://img.shields.io/badge/GitHub-AshkanTheFirst-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AshkanTheFirst)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
 [![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev/)
 [![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)](https://dotnet.microsoft.com/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org)

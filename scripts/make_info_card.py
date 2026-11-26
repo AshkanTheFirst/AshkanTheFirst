@@ -14,7 +14,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "info-card.svg")
 STATIC = bool(os.environ.get("STATIC"))
 
-W, H = 480, 460
+W, H = 480, 480
 PAD = 20
 TITLEBAR_H = 30
 KEY_X = PAD
@@ -48,16 +48,17 @@ HOST = "AshkanTheFirst"   # shown as  AshkanTheFirst@github  in the header
 ROWS = [
     ("host",),
     ("kv", "Role", "AI / ML Engineer & Software Developer"),
-    ("kv", "Focus", "NLP, Computer Vision, RL & Systems Tools"),
+    ("kv", "Focus", "NLP, Vision, RL, Android & Systems Tools"),
     ("kv", "GitHub", "github.com/AshkanTheFirst"),
     ("gap",),
     ("sec", "Stack"),
     ("kv", "AI & ML", "PyTorch, ParsBERT, Vision/OCR, Q-Learning"),
-    ("kv", "Languages", "Python, Go, C#, JavaScript, TypeScript, SQL"),
+    ("kv", "Languages", "Python, Kotlin, Go, C#, JS/TS, SQL"),
     ("kv", "Web & App", "Streamlit, Telebot API, RESTful APIs"),
-    ("kv", "Systems", "Windows 10/11, Cloudflare D1, Linux"),
+    ("kv", "Systems", "Android, Windows 10/11, Cloudflare D1, Linux"),
     ("gap",),
     ("sec", "Projects"),
+    ("bul", "OptiCache: Rootless Android Cache Cleaner (Kotlin)"),
     ("bul", "fake-mail-ai: Disposable Email & OTP Extractor"),
     ("bul", "Phoenix-Optimizer: Windows 10/11 Safe Optimizer"),
     ("bul", "Persian-OCR: Deep Learning Character Recognition"),
