@@ -1,17 +1,17 @@
 {
   "username": "AshkanTheFirst",
-  "generated_at": "2026-11-27T12:34:26Z",
+  "generated_at": "2026-11-28T11:54:06Z",
   "range": {
     "start": "2025-11-23",
-    "end": "2026-11-27"
+    "end": "2026-11-28"
   },
   "total_contributions": 50,
   "active_days": 14,
   "avg_per_active_day": 3.6,
   "current_streak": {
-    "length": 1,
-    "start": "2026-11-26",
-    "end": "2026-11-26"
+    "length": 0,
+    "start": null,
+    "end": null
   },
   "longest_streak": {
     "length": 6,
@@ -1555,6 +1555,10 @@
     },
     {
       "date": "2026-11-27",
+      "count": 0
+    },
+    {
+      "date": "2026-11-28",
       "count": 0
     }
   ]
